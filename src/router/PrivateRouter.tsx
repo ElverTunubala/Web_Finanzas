@@ -13,4 +13,9 @@ export const PrivateRouter = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*", 
+    element: <div>404 - Página no encontrada</div>,
+  },
+
 ]);

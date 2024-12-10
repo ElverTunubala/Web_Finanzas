@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import { useAuth } from "../AuthContext";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useAuth();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (username && password) {
+      
       // Aquí iría la lógica de autenticación real
+      setIsLoggedIn(true);
       navigate("/dashboard/home");
     }
   };
